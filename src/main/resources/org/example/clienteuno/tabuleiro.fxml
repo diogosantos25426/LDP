@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.clienteuno.TabuleiroController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: green;">
+    <children>
+
+        <!-- Carta do meio -->
+        <ImageView fx:id="cartaMeio" layoutX="360" layoutY="200" fitWidth="80" fitHeight="120"/>
+
+        <!-- Baralho pode ser adicionado aqui se quiseres mais tarde -->
+
+        <!-- Mão do jogador -->
+        <HBox fx:id="maoJogador" layoutX="100" layoutY="450" spacing="10" />
+
+        <!-- Mão do oponente (cartas viradas) -->
+        <HBox fx:id="maoOponente" layoutX="100" layoutY="50" spacing="10" />
+
+        <!-- Label para contar cartas do oponente -->
+        <Label fx:id="contadorOponente" layoutX="100" layoutY="20"
+               style="-fx-font-size: 16px; -fx-text-fill: white;" text="0"/>
+
+        <!-- ChoiceBox para cor -->
+        <!-- Botões de escolha de cor -->
+        <HBox layoutX="300" layoutY="340" spacing="10" fx:id="boxCores" >
+            <Button text="Vermelho" style="-fx-background-color: red; -fx-text-fill: white;" onAction="#escolherVermelho"/>
+            <Button text="Verde" style="-fx-background-color: green; -fx-text-fill: white;" onAction="#escolherVerde"/>
+            <Button text="Amarelo" style="-fx-background-color: yellow; -fx-text-fill: black;" onAction="#escolherAmarelo"/>
+            <Button text="Azul" style="-fx-background-color: blue; -fx-text-fill: white;" onAction="#escolherAzul"/>
+        </HBox>
+
+
+        <!-- Botão confirmar cor -->
+
+        <!-- Botão comprar carta -->
+        <!-- Botão Começar Jogo -->
+
+
+        <!-- Botão Comprar Carta (invisível inicialmente) -->
+        <Button fx:id="botaoComprar" layoutX="250" layoutY="550" text="Comprar Carta" onAction="#comprarCarta"/>
+        <Button layoutX="700" layoutY="550" text="Refresh" onAction="#refreshEstado"/>
+        <Button fx:id="botaoSincronizar" text="Sincronizar" onAction="#refreshEstado" layoutX="500" layoutY="350" />
+
+        <!-- Área mensagens -->
+        <TextArea fx:id="areaMensagens" layoutX="600" layoutY="450" prefHeight="100" prefWidth="180" editable="false" />
+
+    </children>
+</AnchorPane>
